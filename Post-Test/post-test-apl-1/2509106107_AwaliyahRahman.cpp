@@ -40,7 +40,7 @@ int main() {
         cout << "Pilih: ";
         cin >> pilih;
 
-        if (menu == 1) {
+        if (pilih == 1) {
             int jam;
             cout << "Masukkan Jam: ";
             cin >> jam;
