@@ -240,7 +240,7 @@ int main(){
                                 int hasil=cariMobil(mobilData,jumlahData,cari);
 
                                 if(hasil!=-1)
-                                    cout<<"Data ditemukan pada nomor urut "<< hasil + 1 <<"\n";
+                                    cout<<"Data ditemukan di nomor ("<< hasil + 1 <<")\n";
                                 else
                                     cout<<"Data tidak ada\n";
                             }
@@ -251,6 +251,9 @@ int main(){
                                 cout<<"\nTidak ada data yang tersedia\n";
                             }
                             else{
+                                // Melakukan sorting sebelum menampilkan data agar nomor urut layar sesuai dengan memori
+                                sortTahunAsc(mobilData, jumlahData);
+
                                 cout<<"\n--- Daftar Kendaraan ---\n";
                                 cout<<"No Plat Merk Tipe Tahun\n";
                                 tampilMobil(mobilData,0,jumlahData);
@@ -259,13 +262,10 @@ int main(){
                                 cout<<"\nMasukkan Tahun yang dicari: ";
                                 cin>>tahun;
 
-                                // Melakukan sorting sebelum binary search
-                                sortTahunAsc(mobilData, jumlahData);
-
                                 int hasil=cariMobilTahun(mobilData,jumlahData,tahun);
 
                                 if(hasil!=-1)
-                                    cout<<"Data ditemukan (setelah diurutkan) pada index " << hasil <<"\n";
+                                    cout<<"Data ditemukan di nomor (" << hasil + 1 <<")\n";
                                 else
                                     cout<<"Data tidak ada\n";
                             }
@@ -273,7 +273,7 @@ int main(){
 
                     }while(menu!=7);
 
-                    break; // Keluar dari loop login jika sudah masuk menu kendaraan
+                    break; 
                 }
 
                 else{
